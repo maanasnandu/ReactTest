@@ -1,0 +1,116 @@
+h2,
+h3 {
+  font-family: "Roboto Mono", monospace;
+  font-size: 1.5em !important;
+}
+
+h1 {
+  font-family: "Roboto Mono", sans-serif;
+  font-size: 30px;
+}
+
+p {
+  font-family: "Roboto Mono", monospace;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+:root {
+  --background-color: #fff;
+  --btn-color: #55ff21;
+  --btn-text-color: #fff;
+
+  --project-card-bg: #ffffff00;
+
+  --text-color: black;
+
+  --form-text-color: #555;
+
+  --footer-text-color: #888;
+}
+
+[data-theme="dark"] {
+  --background-color: #222;
+  --btn-color: #4f09f2;
+  --btn-text-color: #222;
+  --btn-text-resume-color: #4f09f2;
+
+  --project-card-bg: #fff;
+
+  --text-color: white;
+
+  --form-text-color: #fff;
+
+  --footer-text-color: #bbb;
+}
+
+body {
+  background-color: var(--background-color);
+  display: flex;
+  justify-content: center;
+  margin: 0 auto 60px;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  grid-area: 60px;
+}
+
+h2,
+h3,
+p {
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
+}
+
+.sectionTitles {
+  margin-top: 1em;
+  margin-bottom: 10px;
+  font-size: 24px !important;
+  font-family: "Caveat", "Times New Roman", Times, serif !important;
+}
+
+.hover {
+  cursor: pointer;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+  margin-bottom: 3em;
+
+  img {
+    max-width: 300px;
+    align-self: center;
+
+    background-color: var(--project-card-bg);
+  }
+
+  a {
+    width: fit-content;
+    text-decoration: none;
+    color: #222;
+    transition: transform 200ms ease-in-out;
+  }
+
+  a:hover {
+    transform: scale(1.05);
+  }
+
+  .projectsContainer {
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    align-items: center;
+    gap: 30px;
+  }
+}
+
+.myWork {
+  font-family: "Poppins", "Times New Roman", Times, serif !important;
+  font-weight: 600;
+}

@@ -1,0 +1,22 @@
+/* On mouse-over, add a deeper shadow */
+.cardShape:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.projectName {
+  font-family: "Poppins", "Times New Roman", Times, serif !important;
+  font-size: 20px !important;
+}
+
+.projectDescription {
+  font-family: "Space Mono", monospace !important;
+
+  color: black !important;
+  font-size: 15px !important;
+}
+
+.madeWith {
+  font-family: "Poppins", "Times New Roman", Times, serif !important;
+
+  font-size: 15px !important;
+}
