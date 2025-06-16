@@ -55,6 +55,18 @@ hr {
 }
 
 .mySkills {
-  font-family: "Poppins", "Times New Roman", Times, serif !important;
+  font-family: 'Poppins', 'Times New Roman', Times, serif !important;
   font-weight: 600;
+}
+
+.description {
+  font-family: 'Poppins', 'Times New Roman', Times, serif !important;
+  color: powderblue;
+  font-size: 2rem;
+}
+
+.description2 {
+  font-family: 'Poppins', 'Times New Roman', Times, serif !important;
+  color: palevioletred;
+  font-size: 1rem;
 }

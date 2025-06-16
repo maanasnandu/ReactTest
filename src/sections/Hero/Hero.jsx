@@ -1,96 +1,96 @@
-import styles from "./HeroStyles.module.css";
-import heroImg from "../../assets/hero-img.png";
-import sun from "../../assets/sun.svg";
-import moon from "../../assets/moon.svg";
-import linkedLightIcon from "../../assets/linkedin-light.svg";
-import linkedDarkIcon from "../../assets/linkedin-dark.svg";
-import instaLightIcon from "../../assets/instagram-light.svg";
-import instaDarkIcon from "../../assets/instagram-dark.svg";
-import CV from "../../assets/cv.pdf";
-import githubLight from "../../assets/github-light.svg";
-import githubDark from "../../assets/github-dark.svg";
+import styles from './HeroStyles.module.css'
+import heroImg from '../../assets/hero-img.png'
+import sun from '../../assets/sun.svg'
+import moon from '../../assets/moon.svg'
+import linkedLightIcon from '../../assets/linkedin-light.svg'
+import linkedDarkIcon from '../../assets/linkedin-dark.svg'
+import instaLightIcon from '../../assets/instagram-light.svg'
+import instaDarkIcon from '../../assets/instagram-dark.svg'
+import CV from '../../assets/cv.pdf'
+import githubLight from '../../assets/github-light.svg'
+import githubDark from '../../assets/github-dark.svg'
 
-import { useTheme } from "../../common/ThemeContext";
-import { useEffect, useMemo, useState } from "react";
-import Particles, { initParticlesEngine } from "@tsparticles/react";
-import loveIcon from "../../assets/loveIcon.png";
+import { useTheme } from '../../common/ThemeContext'
+import { useEffect, useMemo, useState } from 'react'
+import Particles, { initParticlesEngine } from '@tsparticles/react'
+import loveIcon from '../../assets/loveIcon.png'
 
 // import { loadAll } from "@tsparticles/all"; // if you are going to use `loadAll`, install the "@tsparticles/all" package too.
 // import { loadFull } from "tsparticles"; // if you are going to use `loadFull`, install the "tsparticles" package too.
-import { loadSlim } from "@tsparticles/slim";
+import { loadSlim } from '@tsparticles/slim'
 
-function Hero() {
-  const [init, setInit] = useState(false);
+function Hero () {
+  const [init, setInit] = useState(false)
 
   // this should be run only once per application lifetime
   useEffect(() => {
-    initParticlesEngine(async (engine) => {
+    initParticlesEngine(async engine => {
       // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
       // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
       // starting from v2 you can add only the features you need reducing the bundle size
       //await loadAll(engine);
       //await loadFull(engine);
-      await loadSlim(engine);
+      await loadSlim(engine)
       //await loadBasic(engine);
     }).then(() => {
-      setInit(true);
-    });
-  }, []);
+      setInit(true)
+    })
+  }, [])
 
-  const particlesLoaded = (container) => {
-    console.log(container);
-  };
+  const particlesLoaded = container => {
+    console.log(container)
+  }
 
-  const { theme, toggleTheme } = useTheme();
+  const { theme, toggleTheme } = useTheme()
 
   /**Background animation changes */
-  console.log("Changing theme here: ", theme);
+  console.log('Changing theme here: ', theme)
 
   const lightAmongUs = useMemo(
     () => ({
       autoPlay: true,
       background: {
         color: {
-          value: "#ffffff",
+          value: '#ffffff'
         },
-        image: "",
-        position: "",
-        repeat: "",
-        size: "",
-        opacity: 1,
+        image: '',
+        position: '',
+        repeat: '',
+        size: '',
+        opacity: 1
       },
       backgroundMask: {
-        composite: "destination-out",
+        composite: 'destination-out',
         cover: {
           opacity: 1,
           color: {
-            value: "",
-          },
+            value: ''
+          }
         },
-        enable: false,
+        enable: false
       },
       clear: true,
       defaultThemes: {},
       delay: 0,
       fullScreen: {
         enable: true,
-        zIndex: -1,
+        zIndex: -1
       },
       detectRetina: true,
       duration: 0,
       fpsLimit: 120,
       interactivity: {
-        detectsOn: "window",
+        detectsOn: 'window',
         events: {
           onClick: {
             enable: false,
-            mode: [],
+            mode: []
           },
           onDiv: {
             selectors: [],
             enable: false,
             mode: [],
-            type: "circle",
+            type: 'circle'
           },
           onHover: {
             enable: false,
@@ -98,30 +98,30 @@ function Hero() {
             parallax: {
               enable: false,
               force: 2,
-              smooth: 10,
-            },
+              smooth: 10
+            }
           },
           resize: {
             delay: 0.5,
-            enable: true,
-          },
+            enable: true
+          }
         },
         modes: {
           trail: {
             delay: 1,
             pauseOnStop: false,
-            quantity: 1,
+            quantity: 1
           },
           attract: {
             distance: 200,
             duration: 0.4,
-            easing: "ease-out-quad",
+            easing: 'ease-out-quad',
             factor: 1,
             maxSpeed: 50,
-            speed: 1,
+            speed: 1
           },
           bounce: {
-            distance: 200,
+            distance: 200
           },
           bubble: {
             distance: 200,
@@ -131,31 +131,31 @@ function Hero() {
               distance: 200,
               duration: 0.4,
               mix: false,
-              selectors: [],
-            },
+              selectors: []
+            }
           },
           connect: {
             distance: 80,
             links: {
-              opacity: 0.5,
+              opacity: 0.5
             },
-            radius: 60,
+            radius: 60
           },
           grab: {
             distance: 100,
             links: {
               blink: false,
               consent: false,
-              opacity: 1,
-            },
+              opacity: 1
+            }
           },
           push: {
             default: true,
             groups: [],
-            quantity: 4,
+            quantity: 4
           },
           remove: {
-            quantity: 2,
+            quantity: 2
           },
           repulse: {
             distance: 200,
@@ -163,79 +163,79 @@ function Hero() {
             factor: 100,
             speed: 1,
             maxSpeed: 50,
-            easing: "ease-out-quad",
+            easing: 'ease-out-quad',
             divs: {
               distance: 200,
               duration: 0.4,
               factor: 100,
               speed: 1,
               maxSpeed: 50,
-              easing: "ease-out-quad",
-              selectors: [],
-            },
+              easing: 'ease-out-quad',
+              selectors: []
+            }
           },
           slow: {
             factor: 3,
-            radius: 200,
+            radius: 200
           },
           particle: {
             replaceCursor: false,
             pauseOnStop: false,
-            stopDelay: 0,
+            stopDelay: 0
           },
           light: {
             area: {
               gradient: {
                 start: {
-                  value: "#ffffff",
+                  value: '#ffffff'
                 },
                 stop: {
-                  value: "#000000",
-                },
+                  value: '#000000'
+                }
               },
-              radius: 1000,
+              radius: 1000
             },
             shadow: {
               color: {
-                value: "#000000",
+                value: '#000000'
               },
-              length: 2000,
-            },
-          },
-        },
+              length: 2000
+            }
+          }
+        }
       },
       manualParticles: [],
       particles: {
         bounce: {
           horizontal: {
-            value: 1,
+            value: 1
           },
           vertical: {
-            value: 1,
-          },
+            value: 1
+          }
         },
         collisions: {
           absorb: {
-            speed: 2,
+            speed: 2
           },
           bounce: {
             horizontal: {
-              value: 1,
+              value: 1
             },
             vertical: {
-              value: 1,
-            },
+              value: 1
+            }
           },
           enable: false,
           maxSpeed: 50,
-          mode: "bounce",
+          mode: 'bounce',
           overlap: {
             enable: true,
-            retries: 0,
-          },
+            retries: 0
+          }
         },
         color: {
-          value: "#000000",
+          value: '#000000',
           animation: {
             h: {
               count: 0,
@@ -244,7 +244,7 @@ function Hero() {
               decay: 0,
               delay: 0,
               sync: true,
-              offset: 0,
+              offset: 0
             },
             s: {
               count: 0,
@@ -253,7 +253,7 @@ function Hero() {
               decay: 0,
               delay: 0,
               sync: true,
-              offset: 0,
+              offset: 0
             },
             l: {
               count: 0,
@@ -262,122 +262,122 @@ function Hero() {
               decay: 0,
               delay: 0,
               sync: true,
-              offset: 0,
-            },
-          },
+              offset: 0
+            }
+          }
         },
         effect: {
           close: true,
           fill: true,
           options: {},
-          type: [],
+          type: []
         },
         groups: {
           z5000: {
             number: {
-              value: 70,
+              value: 70
             },
             zIndex: {
-              value: 50,
-            },
+              value: 50
+            }
           },
           z7500: {
             number: {
-              value: 30,
+              value: 30
             },
             zIndex: {
-              value: 75,
-            },
+              value: 75
+            }
           },
           z2500: {
             number: {
-              value: 50,
+              value: 50
             },
             zIndex: {
-              value: 25,
-            },
+              value: 25
+            }
           },
           z1000: {
             number: {
-              value: 40,
+              value: 40
             },
             zIndex: {
-              value: 10,
-            },
-          },
+              value: 10
+            }
+          }
         },
         move: {
           angle: {
             offset: 0,
-            value: 10,
+            value: 10
           },
           attract: {
             distance: 200,
             enable: false,
             rotate: {
               x: 3000,
-              y: 3000,
-            },
+              y: 3000
+            }
           },
           center: {
             x: 50,
             y: 50,
-            mode: "percent",
-            radius: 0,
+            mode: 'percent',
+            radius: 0
           },
           decay: 0,
           distance: {},
-          direction: "right",
+          direction: 'right',
           drift: 0,
           enable: true,
           gravity: {
             acceleration: 9.81,
             enable: false,
             inverse: false,
-            maxSpeed: 50,
+            maxSpeed: 50
           },
           path: {
             clamp: true,
             delay: {
-              value: 0,
+              value: 0
             },
             enable: false,
-            options: {},
+            options: {}
           },
           outModes: {
-            default: "out",
-            bottom: "out",
-            left: "out",
-            right: "out",
-            top: "out",
+            default: 'out',
+            bottom: 'out',
+            left: 'out',
+            right: 'out',
+            top: 'out'
           },
           random: false,
           size: false,
           speed: 5,
           spin: {
             acceleration: 0,
-            enable: false,
+            enable: false
           },
           straight: false,
           trail: {
             enable: false,
             length: 10,
-            fill: {},
+            fill: {}
           },
           vibrate: false,
-          warp: false,
+          warp: false
         },
         number: {
           density: {
             enable: false,
             width: 1920,
-            height: 1080,
+            height: 1080
           },
           limit: {
-            mode: "delete",
-            value: 0,
+            mode: 'delete',
+            value: 0
           },
-          value: 200,
+          value: 200
         },
         opacity: {
           value: 1,
@@ -388,28 +388,28 @@ function Hero() {
             decay: 0,
             delay: 0,
             sync: false,
-            mode: "auto",
-            startValue: "random",
-            destroy: "none",
-          },
+            mode: 'auto',
+            startValue: 'random',
+            destroy: 'none'
+          }
         },
         reduceDuplicates: false,
         shadow: {
           blur: 0,
           color: {
-            value: "#000",
+            value: '#000'
           },
           enable: false,
           offset: {
             x: 0,
-            y: 0,
-          },
+            y: 0
+          }
         },
         shape: {
           close: true,
           fill: true,
           options: {},
-          type: "circle",
+          type: 'circle'
         },
         size: {
           value: 3,
@@ -420,50 +420,50 @@ function Hero() {
             decay: 0,
             delay: 0,
             sync: false,
-            mode: "auto",
-            startValue: "random",
-            destroy: "none",
-          },
+            mode: 'auto',
+            startValue: 'random',
+            destroy: 'none'
+          }
         },
         stroke: {
-          width: 0,
+          width: 0
         },
         zIndex: {
           value: 5,
           opacityRate: 0.5,
           sizeRate: 1,
-          velocityRate: 1,
+          velocityRate: 1
         },
         destroy: {
           bounds: {},
-          mode: "none",
+          mode: 'none',
           split: {
             count: 1,
             factor: {
-              value: 3,
+              value: 3
             },
             rate: {
               value: {
                 min: 4,
-                max: 9,
-              },
+                max: 9
+              }
             },
             sizeOffset: true,
-            particles: {},
-          },
+            particles: {}
+          }
         },
         roll: {
           darken: {
             enable: false,
-            value: 0,
+            value: 0
           },
           enable: false,
           enlighten: {
             enable: false,
-            value: 0,
+            value: 0
           },
-          mode: "vertical",
-          speed: 25,
+          mode: 'vertical',
+          speed: 25
         },
         tilt: {
           value: 0,
@@ -471,41 +471,41 @@ function Hero() {
             enable: false,
             speed: 0,
             decay: 0,
-            sync: false,
+            sync: false
           },
-          direction: "clockwise",
-          enable: false,
+          direction: 'clockwise',
+          enable: false
         },
         twinkle: {
           lines: {
             enable: false,
             frequency: 0.05,
-            opacity: 1,
+            opacity: 1
           },
           particles: {
             enable: false,
             frequency: 0.05,
-            opacity: 1,
-          },
+            opacity: 1
+          }
         },
         wobble: {
           distance: 5,
           enable: false,
           speed: {
             angle: 50,
-            move: 10,
-          },
+            move: 10
+          }
         },
         life: {
           count: 0,
           delay: {
             value: 0,
-            sync: false,
+            sync: false
           },
           duration: {
             value: 0,
-            sync: false,
-          },
+            sync: false
+          }
         },
         rotate: {
           value: 0,
@@ -513,10 +513,10 @@ function Hero() {
             enable: false,
             speed: 0,
             decay: 0,
-            sync: false,
+            sync: false
           },
-          direction: "clockwise",
-          path: false,
+          direction: 'clockwise',
+          path: false
         },
         orbit: {
           animation: {
@@ -525,19 +525,19 @@ function Hero() {
             speed: 1,
             decay: 0,
             delay: 0,
-            sync: false,
+            sync: false
           },
           enable: false,
           opacity: 1,
           rotation: {
-            value: 45,
+            value: 45
           },
-          width: 1,
+          width: 1
         },
         links: {
           blink: false,
           color: {
-            value: "#fff",
+            value: '#fff'
           },
           consent: false,
           distance: 100,
@@ -547,16 +547,16 @@ function Hero() {
           shadow: {
             blur: 5,
             color: {
-              value: "#000",
+              value: '#000'
             },
-            enable: false,
+            enable: false
           },
           triangles: {
             enable: false,
-            frequency: 1,
+            frequency: 1
           },
           width: 1,
-          warp: false,
+          warp: false
         },
         repulse: {
           value: 0,
@@ -564,8 +564,8 @@ function Hero() {
           distance: 1,
           duration: 1,
           factor: 1,
-          speed: 1,
-        },
+          speed: 1
+        }
       },
       pauseOnBlur: true,
       pauseOnOutsideViewport: true,
@@ -578,124 +578,124 @@ function Hero() {
         autoPlay: true,
         fill: true,
         life: {
-          wait: false,
+          wait: false
         },
         rate: {
           quantity: 1,
-          delay: 7,
+          delay: 7
         },
         shape: {
           options: {},
           replace: {
             color: false,
-            opacity: false,
+            opacity: false
           },
-          type: "square",
+          type: 'square'
         },
         startCount: 0,
         size: {
-          mode: "percent",
+          mode: 'percent',
           height: 0,
-          width: 0,
+          width: 0
         },
         particles: {
           shape: {
-            type: "images",
+            type: 'images',
             options: {
               images: {
-                src: "https://img.icons8.com/fluency/48/among-us.png",
+                src: 'https://img.icons8.com/fluency/48/among-us.png',
                 width: 500,
-                height: 634,
-              },
-            },
+                height: 634
+              }
+            }
           },
           size: {
-            value: 40,
+            value: 40
           },
           move: {
             speed: 10,
             outModes: {
-              default: "none",
-              right: "destroy",
+              default: 'none',
+              right: 'destroy'
             },
-            straight: true,
+            straight: true
           },
           zIndex: {
-            value: 0,
+            value: 0
           },
           rotate: {
             value: {
               min: 0,
-              max: 360,
+              max: 360
             },
             animation: {
               enable: true,
               speed: 10,
-              sync: true,
-            },
-          },
+              sync: true
+            }
+          }
         },
         position: {
           x: -5,
-          y: 55,
-        },
+          y: 55
+        }
       },
       motion: {
         disable: false,
         reduce: {
           factor: 4,
-          value: true,
-        },
-      },
+          value: true
+        }
+      }
     }),
     []
-  );
+  )
 
   const darkAmongUs = useMemo(
     () => ({
       autoPlay: true,
       background: {
         color: {
-          value: "#000000",
+          value: '#000000'
         },
-        image: "",
-        position: "",
-        repeat: "",
-        size: "",
-        opacity: 1,
+        image: '',
+        position: '',
+        repeat: '',
+        size: '',
+        opacity: 1
       },
       backgroundMask: {
-        composite: "destination-out",
+        composite: 'destination-out',
         cover: {
           opacity: 1,
           color: {
-            value: "",
-          },
+            value: ''
+          }
         },
-        enable: false,
+        enable: false
       },
       clear: true,
       defaultThemes: {},
       delay: 0,
       fullScreen: {
         enable: true,
-        zIndex: -1,
+        zIndex: -1
       },
       detectRetina: true,
       duration: 0,
       fpsLimit: 120,
       interactivity: {
-        detectsOn: "window",
+        detectsOn: 'window',
         events: {
           onClick: {
             enable: false,
-            mode: [],
+            mode: []
           },
           onDiv: {
             selectors: [],
             enable: false,
             mode: [],
-            type: "circle",
+            type: 'circle'
           },
           onHover: {
             enable: false,
@@ -703,30 +703,30 @@ function Hero() {
             parallax: {
               enable: false,
               force: 2,
-              smooth: 10,
-            },
+              smooth: 10
+            }
           },
           resize: {
             delay: 0.5,
-            enable: true,
-          },
+            enable: true
+          }
         },
         modes: {
           trail: {
             delay: 1,
             pauseOnStop: false,
-            quantity: 1,
+            quantity: 1
           },
           attract: {
             distance: 200,
             duration: 0.4,
-            easing: "ease-out-quad",
+            easing: 'ease-out-quad',
             factor: 1,
             maxSpeed: 50,
-            speed: 1,
+            speed: 1
           },
           bounce: {
-            distance: 200,
+            distance: 200
           },
           bubble: {
             distance: 200,
@@ -736,31 +736,31 @@ function Hero() {
               distance: 200,
               duration: 0.4,
               mix: false,
-              selectors: [],
-            },
+              selectors: []
+            }
           },
           connect: {
             distance: 80,
             links: {
-              opacity: 0.5,
+              opacity: 0.5
             },
-            radius: 60,
+            radius: 60
           },
           grab: {
             distance: 100,
             links: {
               blink: false,
               consent: false,
-              opacity: 1,
-            },
+              opacity: 1
+            }
           },
           push: {
             default: true,
             groups: [],
-            quantity: 4,
+            quantity: 4
           },
           remove: {
-            quantity: 2,
+            quantity: 2
           },
           repulse: {
             distance: 200,
@@ -768,79 +768,79 @@ function Hero() {
             factor: 100,
             speed: 1,
             maxSpeed: 50,
-            easing: "ease-out-quad",
+            easing: 'ease-out-quad',
             divs: {
               distance: 200,
               duration: 0.4,
               factor: 100,
               speed: 1,
               maxSpeed: 50,
-              easing: "ease-out-quad",
-              selectors: [],
-            },
+              easing: 'ease-out-quad',
+              selectors: []
+            }
           },
           slow: {
             factor: 3,
-            radius: 200,
+            radius: 200
           },
           particle: {
             replaceCursor: false,
             pauseOnStop: false,
-            stopDelay: 0,
+            stopDelay: 0
           },
           light: {
             area: {
               gradient: {
                 start: {
-                  value: "#ffffff",
+                  value: '#ffffff'
                 },
                 stop: {
-                  value: "#000000",
-                },
+                  value: '#000000'
+                }
               },
-              radius: 1000,
+              radius: 1000
             },
             shadow: {
               color: {
-                value: "#000000",
+                value: '#000000'
               },
-              length: 2000,
-            },
-          },
-        },
+              length: 2000
+            }
+          }
+        }
       },
       manualParticles: [],
       particles: {
         bounce: {
           horizontal: {
-            value: 1,
+            value: 1
           },
           vertical: {
-            value: 1,
-          },
+            value: 1
+          }
         },
         collisions: {
           absorb: {
-            speed: 2,
+            speed: 2
           },
           bounce: {
             horizontal: {
-              value: 1,
+              value: 1
             },
             vertical: {
-              value: 1,
-            },
+              value: 1
+            }
           },
           enable: false,
           maxSpeed: 50,
-          mode: "bounce",
+          mode: 'bounce',
           overlap: {
             enable: true,
-            retries: 0,
-          },
+            retries: 0
+          }
         },
         color: {
-          value: "#fff",
+          value: '#fff',
           animation: {
             h: {
               count: 0,
@@ -849,7 +849,7 @@ function Hero() {
               decay: 0,
               delay: 0,
               sync: true,
-              offset: 0,
+              offset: 0
             },
             s: {
               count: 0,
@@ -858,7 +858,7 @@ function Hero() {
               decay: 0,
               delay: 0,
               sync: true,
-              offset: 0,
+              offset: 0
             },
             l: {
               count: 0,
@@ -867,122 +867,122 @@ function Hero() {
               decay: 0,
               delay: 0,
               sync: true,
-              offset: 0,
-            },
-          },
+              offset: 0
+            }
+          }
         },
         effect: {
           close: true,
           fill: true,
           options: {},
-          type: [],
+          type: []
         },
         groups: {
           z5000: {
             number: {
-              value: 70,
+              value: 70
             },
             zIndex: {
-              value: 50,
-            },
+              value: 50
+            }
           },
           z7500: {
             number: {
-              value: 30,
+              value: 30
             },
             zIndex: {
-              value: 75,
-            },
+              value: 75
+            }
           },
           z2500: {
             number: {
-              value: 50,
+              value: 50
             },
             zIndex: {
-              value: 25,
-            },
+              value: 25
+            }
           },
           z1000: {
             number: {
-              value: 40,
+              value: 40
             },
             zIndex: {
-              value: 10,
-            },
-          },
+              value: 10
+            }
+          }
         },
         move: {
           angle: {
             offset: 0,
-            value: 10,
+            value: 10
           },
           attract: {
             distance: 200,
             enable: false,
             rotate: {
               x: 3000,
-              y: 3000,
-            },
+              y: 3000
+            }
           },
           center: {
             x: 50,
             y: 50,
-            mode: "percent",
-            radius: 0,
+            mode: 'percent',
+            radius: 0
           },
           decay: 0,
           distance: {},
-          direction: "right",
+          direction: 'right',
           drift: 0,
           enable: true,
           gravity: {
             acceleration: 9.81,
             enable: false,
             inverse: false,
-            maxSpeed: 50,
+            maxSpeed: 50
           },
           path: {
             clamp: true,
             delay: {
-              value: 0,
+              value: 0
             },
             enable: false,
-            options: {},
+            options: {}
           },
           outModes: {
-            default: "out",
-            bottom: "out",
-            left: "out",
-            right: "out",
-            top: "out",
+            default: 'out',
+            bottom: 'out',
+            left: 'out',
+            right: 'out',
+            top: 'out'
           },
           random: false,
           size: false,
           speed: 5,
           spin: {
             acceleration: 0,
-            enable: false,
+            enable: false
           },
           straight: false,
           trail: {
             enable: false,
             length: 10,
-            fill: {},
+            fill: {}
           },
           vibrate: false,
-          warp: false,
+          warp: false
         },
         number: {
           density: {
             enable: false,
             width: 1920,
-            height: 1080,
+            height: 1080
           },
           limit: {
-            mode: "delete",
-            value: 0,
+            mode: 'delete',
+            value: 0
           },
-          value: 200,
+          value: 200
         },
         opacity: {
           value: 1,
@@ -993,28 +993,28 @@ function Hero() {
             decay: 0,
             delay: 0,
             sync: false,
-            mode: "auto",
-            startValue: "random",
-            destroy: "none",
-          },
+            mode: 'auto',
+            startValue: 'random',
+            destroy: 'none'
+          }
         },
         reduceDuplicates: false,
         shadow: {
           blur: 0,
           color: {
-            value: "#000",
+            value: '#000'
           },
           enable: false,
           offset: {
             x: 0,
-            y: 0,
-          },
+            y: 0
+          }
         },
         shape: {
           close: true,
           fill: true,
           options: {},
-          type: "circle",
+          type: 'circle'
         },
         size: {
           value: 3,
@@ -1025,50 +1025,50 @@ function Hero() {
             decay: 0,
             delay: 0,
             sync: false,
-            mode: "auto",
-            startValue: "random",
-            destroy: "none",
-          },
+            mode: 'auto',
+            startValue: 'random',
+            destroy: 'none'
+          }
         },
         stroke: {
-          width: 0,
+          width: 0
         },
         zIndex: {
           value: 5,
           opacityRate: 0.5,
           sizeRate: 1,
-          velocityRate: 1,
+          velocityRate: 1
         },
         destroy: {
           bounds: {},
-          mode: "none",
+          mode: 'none',
           split: {
             count: 1,
             factor: {
-              value: 3,
+              value: 3
             },
             rate: {
               value: {
                 min: 4,
-                max: 9,
-              },
+                max: 9
+              }
             },
             sizeOffset: true,
-            particles: {},
-          },
+            particles: {}
+          }
         },
         roll: {
           darken: {
             enable: false,
-            value: 0,
+            value: 0
           },
           enable: false,
           enlighten: {
             enable: false,
-            value: 0,
+            value: 0
           },
-          mode: "vertical",
-          speed: 25,
+          mode: 'vertical',
+          speed: 25
         },
         tilt: {
           value: 0,
@@ -1076,41 +1076,41 @@ function Hero() {
             enable: false,
             speed: 0,
             decay: 0,
-            sync: false,
+            sync: false
           },
-          direction: "clockwise",
-          enable: false,
+          direction: 'clockwise',
+          enable: false
         },
         twinkle: {
           lines: {
             enable: false,
             frequency: 0.05,
-            opacity: 1,
+            opacity: 1
           },
           particles: {
             enable: false,
             frequency: 0.05,
-            opacity: 1,
-          },
+            opacity: 1
+          }
         },
         wobble: {
           distance: 5,
           enable: false,
           speed: {
             angle: 50,
-            move: 10,
-          },
+            move: 10
+          }
         },
         life: {
           count: 0,
           delay: {
             value: 0,
-            sync: false,
+            sync: false
           },
           duration: {
             value: 0,
-            sync: false,
-          },
+            sync: false
+          }
         },
         rotate: {
           value: 0,
@@ -1118,10 +1118,10 @@ function Hero() {
             enable: false,
             speed: 0,
             decay: 0,
-            sync: false,
+            sync: false
           },
-          direction: "clockwise",
-          path: false,
+          direction: 'clockwise',
+          path: false
         },
         orbit: {
           animation: {
@@ -1130,19 +1130,19 @@ function Hero() {
             speed: 1,
             decay: 0,
             delay: 0,
-            sync: false,
+            sync: false
           },
           enable: false,
           opacity: 1,
           rotation: {
-            value: 45,
+            value: 45
           },
-          width: 1,
+          width: 1
         },
         links: {
           blink: false,
           color: {
-            value: "#fff",
+            value: '#fff'
           },
           consent: false,
           distance: 100,
@@ -1152,16 +1152,16 @@ function Hero() {
           shadow: {
             blur: 5,
             color: {
-              value: "#000",
+              value: '#000'
             },
-            enable: false,
+            enable: false
           },
           triangles: {
             enable: false,
-            frequency: 1,
+            frequency: 1
           },
           width: 1,
-          warp: false,
+          warp: false
         },
         repulse: {
           value: 0,
@@ -1169,8 +1169,8 @@ function Hero() {
           distance: 1,
           duration: 1,
           factor: 1,
-          speed: 1,
-        },
+          speed: 1
+        }
       },
       pauseOnBlur: true,
       pauseOnOutsideViewport: true,
@@ -1183,107 +1183,107 @@ function Hero() {
         autoPlay: true,
         fill: true,
         life: {
-          wait: false,
+          wait: false
         },
         rate: {
           quantity: 1,
-          delay: 7,
+          delay: 7
         },
         shape: {
           options: {},
           replace: {
             color: false,
-            opacity: false,
+            opacity: false
           },
-          type: "square",
+          type: 'square'
         },
         startCount: 0,
         size: {
-          mode: "percent",
+          mode: 'percent',
           height: 0,
-          width: 0,
+          width: 0
         },
         particles: {
           shape: {
-            type: "images",
+            type: 'images',
             options: {
               images: {
-                src: "https://particles.js.org/images/cyan_amongus.png",
+                src: 'https://particles.js.org/images/cyan_amongus.png',
                 width: 500,
-                height: 634,
-              },
-            },
+                height: 634
+              }
+            }
           },
           size: {
-            value: 40,
+            value: 40
           },
           move: {
             speed: 10,
             outModes: {
-              default: "none",
-              right: "destroy",
+              default: 'none',
+              right: 'destroy'
             },
-            straight: true,
+            straight: true
           },
           zIndex: {
-            value: 0,
+            value: 0
           },
           rotate: {
             value: {
               min: 0,
-              max: 360,
+              max: 360
             },
             animation: {
               enable: true,
               speed: 10,
-              sync: true,
-            },
-          },
+              sync: true
+            }
+          }
         },
         position: {
           x: -5,
-          y: 55,
-        },
+          y: 55
+        }
       },
       motion: {
         disable: false,
         reduce: {
           factor: 4,
-          value: true,
-        },
-      },
+          value: true
+        }
+      }
     }),
     []
-  );
+  )
 
-  const options = theme === "light" ? lightAmongUs : darkAmongUs;
+  const options = theme === 'light' ? lightAmongUs : darkAmongUs
 
-  console.log("Option is now: ", options);
+  console.log('Option is now: ', options)
 
-  const themeIcon = theme === "light" ? sun : moon;
-  const linkedInIcon = theme === "light" ? linkedLightIcon : linkedDarkIcon;
-  const instaIcon = theme === "light" ? instaLightIcon : instaDarkIcon;
-  const githubIcon = theme === "light" ? githubLight : githubDark;
+  const themeIcon = theme === 'light' ? sun : moon
+  const linkedInIcon = theme === 'light' ? linkedLightIcon : linkedDarkIcon
+  const instaIcon = theme === 'light' ? instaLightIcon : instaDarkIcon
+  const githubIcon = theme === 'light' ? githubLight : githubDark
 
   if (init) {
     return (
       <>
         <Particles
-          id="tsparticles"
+          id='tsparticles'
           particlesLoaded={particlesLoaded}
           options={options}
         />
-        <section id="hero" className={styles.container}>
+        <section id='hero' className={styles.container}>
           <div className={styles.colorModeContainer}>
             <img
               className={styles.hero}
               src={heroImg}
-              alt="Profile picture of Maanas Muddam"
+              alt='Profile picture of Maanas Muddam'
             />
             <img
               src={themeIcon}
               className={styles.colorMode}
-              alt="Theme Mode"
+              alt='Theme Mode'
               onClick={toggleTheme}
             />
           </div>
@@ -1292,43 +1292,43 @@ function Hero() {
             <h1>
               Maanas <br /> Muddam
             </h1>
-            <h3>UI Developer</h3>
+            <h3>Web Developer</h3>
 
             <span>
-              <a href="https://github.com/maanasnandu" target="_blank">
-                <img src={githubIcon} alt="GitHub" />
+              <a href='https://github.com/maanasnandu' target='_blank'>
+                <img src={githubIcon} alt='GitHub' />
               </a>
-              <a href="https://www.linkedin.com/in/msnm" target="_blank">
-                <img src={linkedInIcon} alt="LinkedIn" />
+              <a href='https://www.linkedin.com/in/msnm' target='_blank'>
+                <img src={linkedInIcon} alt='LinkedIn' />
               </a>
 
               <a
-                href="https://www.instagram.com/msn.omdlensman/"
-                target="_blank"
+                href='https://www.instagram.com/msn.omdlensman/'
+                target='_blank'
               >
-                <img src={instaIcon} alt="Instagram" />
+                <img src={instaIcon} alt='Instagram' />
               </a>
             </span>
 
-            <p className="description">
-              I'm a Front-End developer with 2+ years of professional expertise,
+            <p className='description'>
+              I'm a Web Developer with 3+ years of professional expertise,
               <br />
               passionate about building great web experiences. <br />I also love
               photography and travel
             </p>
 
             <a href={CV} download>
-              <button className="hover">
+              <button className='hover'>
                 <p className={styles.resumeHeading}>Resume</p>
               </button>
             </a>
           </div>
         </section>
       </>
-    );
+    )
   }
 
-  return <></>;
+  return <></>
 }
 
-export default Hero;
+export default Hero
