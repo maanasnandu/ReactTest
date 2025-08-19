@@ -19,7 +19,7 @@ function Projects () {
           h3='Ani-Dex'
           p='A Fun Animal Memory Game'
           madeWith1='React.js'
-          madeWith2='JSON'
+          madeWith2='Python'
         />
 
         <ProjectCard
