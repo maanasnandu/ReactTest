@@ -62,7 +62,7 @@ function Skills () {
       <div className={styles.projectsContainer}>
         <InstagramEmbed
           className='hover'
-          url='https://www.instagram.com/msn.omdlensman/'
+          url='https://www.instagram.com/msn.lensman/'
         />
       </div>
 
