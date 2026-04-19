@@ -15,6 +15,28 @@ function Skills () {
     <section id='skills' className={styles.container}>
       <h2 className={styles.mySkills}>Skills</h2>
       <br />
+      {/* Core Data Languages & Libraries */}
+          <div className={styles.skillList}>
+            <SkillList src={checkMarkIcon} skill='Python' />
+            <SkillList src={checkMarkIcon} skill='SQL' />
+            <SkillList src={checkMarkIcon} skill='Pandas' />
+          </div>
+          <hr />
+          {/* Data Visualization & Analytics */}
+          <div className={styles.skillList}>
+            <SkillList src={checkMarkIcon} skill='Tableau' />
+            <SkillList src={checkMarkIcon} skill='Data Analytics' />
+            <SkillList src={checkMarkIcon} skill='Statistics' />
+          </div>
+          <hr />
+          {/* Cloud Infrastructure & Version Control */}
+          <div className={styles.skillList}>
+            <SkillList src={checkMarkIcon} skill='AWS' />
+            <SkillList src={checkMarkIcon} skill='Azure AZ-900' />
+            <SkillList src={checkMarkIcon} skill='Git' />
+          </div>
+      
+      <hr />
       <div className={styles.skillList}>
         <SkillList src={checkMarkIcon} skill='HTML' />
         <SkillList src={checkMarkIcon} skill='CSS' />
@@ -26,19 +48,6 @@ function Skills () {
         <SkillList src={checkMarkIcon} skill='Angular' />
         <SkillList src={checkMarkIcon} skill='TypeScript' />
       </div>
-      <hr />
-      <div className={styles.skillList}>
-        <SkillList src={checkMarkIcon} skill='Python' />
-        <SkillList src={checkMarkIcon} skill='Django' />
-        <SkillList src={checkMarkIcon} skill='FastAPI' />
-      </div>
-      <hr />
-      <div className={styles.skillList}>
-        <SkillList src={checkMarkIcon} skill='Bootstrap' />
-        <SkillList src={checkMarkIcon} skill='Azure AZ-900' />
-        <SkillList src={checkMarkIcon} skill='Git' />
-      </div>
-
       <br />
       <br />
       <p className={styles.description}>I made this website with React.JS!😁</p>
@@ -59,7 +68,7 @@ function Skills () {
 
       <br />
       <div className={styles.projectsContainer}>
-        <p> &copy; Maanas Muddam 2025</p>
+        <p> &copy; Maanas Muddam 2026</p>
       </div>
     </section>
   )
