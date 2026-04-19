@@ -1311,11 +1311,10 @@ function Hero () {
             </span>
 
             <p className='description'>
-              I'm a Data Analyst and a Web Developer with 3+ years of professional expertise,
-              <br />
-              passionate about building great web experiences utilizing data. <br />I also love
-              photography and travel
-            </p>
+  I'm a Data Analyst with over 3 years of systems engineering experience,
+  <br />
+  passionate about transforming complex datasets into clear, actionable insights through AI and visualization. <br />Off-screen, I love traveling and wildlife photography.
+</p>
 
             <a href={CV} download>
               <button className='hover'>
