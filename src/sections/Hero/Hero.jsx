@@ -1292,7 +1292,7 @@ function Hero () {
             <h1>
               Maanas <br /> Muddam
             </h1>
-            <h3>Web Developer</h3>
+            <h3>Data Analyst</h3>
 
             <span>
               <a href='https://github.com/maanasnandu' target='_blank'>
@@ -1311,9 +1311,9 @@ function Hero () {
             </span>
 
             <p className='description'>
-              I'm a Web Developer with 3+ years of professional expertise,
+              I'm a Data Analyst and a Web Developer with 3+ years of professional expertise,
               <br />
-              passionate about building great web experiences. <br />I also love
+              passionate about building great web experiences utilizing data. <br />I also love
               photography and travel
             </p>
 
